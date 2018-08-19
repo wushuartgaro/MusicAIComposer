@@ -27,33 +27,33 @@ Please copy and paste the chromedriver_win32 folder in C:\ drive.
 Please execute the following code in your Google Colab's Jupyter Notebook:
 
 1.
-!apt-get install -y -qq software-properties-common python-software-properties module-init-tools
-!add-apt-repository -y ppa:alessandro-strada/ppa 2>&1 > /dev/null
-!apt-get update -qq 2>&1 > /dev/null
-!apt-get -y install -qq google-drive-ocamlfuse fuse
-from google.colab import auth
-auth.authenticate_user()
-from oauth2client.client import GoogleCredentials
-creds = GoogleCredentials.get_application_default()
-import getpass
-!google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret} < /dev/null 2>&1 | grep URL
-vcode = getpass.getpass()
-!echo {vcode} | google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret}
+!apt-get install -y -qq software-properties-common python-software-properties module-init-tools <br/>
+!add-apt-repository -y ppa:alessandro-strada/ppa 2>&1 > /dev/null <br/>
+!apt-get update -qq 2>&1 > /dev/null <br/>
+!apt-get -y install -qq google-drive-ocamlfuse fuse <br/>
+from google.colab import auth <br/>
+auth.authenticate_user() <br/>
+from oauth2client.client import GoogleCredentials <br/>
+creds = GoogleCredentials.get_application_default() <br/>
+import getpass <br/>
+!google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret} < /dev/null 2>&1 | grep URL <br/>
+vcode = getpass.getpass() <br/>
+!echo {vcode} | google-drive-ocamlfuse -headless -id={creds.client_id} -secret={creds.client_secret} <br/>
 
 2.
-!mkdir -p drive
-!google-drive-ocamlfuse drive
+!mkdir -p drive <br/>
+!google-drive-ocamlfuse drive <br/>
 
 3.
-!pip install keras==2.0
-!apt-get install swig
-!apt-get install libasound2-dev
-!pip install git+https://github.com/vishnubob/python-midi@feature/python3
-!pip install -r drive/app/DeepJ/requirements.txt
-!pip install --upgrade tensorflow-gpu==1.4
+!pip install keras==2.0 <br/>
+!apt-get install swig <br/>
+!apt-get install libasound2-dev <br/>
+!pip install git+https://github.com/vishnubob/python-midi@feature/python3 <br/>
+!pip install -r drive/app/DeepJ/requirements.txt <br/>
+!pip install --upgrade tensorflow-gpu==1.4 <br/>
 
 4.
-!python drive/app/DeepJ/train.py
+!python drive/app/DeepJ/train.py <br/>
 
-5. 
-!python drive/app/DeepJ/generate.py
+5.
+!python drive/app/DeepJ/generate.py <br/>
