@@ -1,5 +1,5 @@
 # MusicAIComposer
-Using AI to compose music
+Extension on DeepJ A.I. Music Composition Model: https://github.com/calclavia/DeepJ
 
 # The prerequisites below are for running MIDI_Crawler.py for crawling MIDI files from FreeMidi.org
 
